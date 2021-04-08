@@ -1,0 +1,23 @@
+.dialog-container {
+  border: 1px solid black;
+  width: 50vw;
+}
+.dialog-header {
+  padding: 20px;
+  position: relative;
+}
+#titleText {
+  font-size: 20px;
+  font-weight: bold;
+  width: fit-content;
+  margin: 0 0 0 0;
+}
+.dialog-body {
+  padding: 20px;
+}
+#xButton {
+  position: absolute;
+  width: fit-content;
+  right: 40px;
+  top: 20px;
+}

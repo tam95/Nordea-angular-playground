@@ -7,4 +7,5 @@ import { NgModel } from "@angular/forms";
 })
 export class AppComponent {
   name = "Angular " + VERSION.major;
+  title = "title";
 }

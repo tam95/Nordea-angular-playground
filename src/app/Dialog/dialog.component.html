@@ -1,8 +1,9 @@
-<div>
-  <div class="header">
-    <h2>Title of the dialog</h2>
+<div class="dialog-container">
+  <div class="dialog-header">
+    <div id="titleText">{{title}}</div>
+    <div id="xButton" (click)="closeDialog()">X</div>
   </div>
-  <div class="body">
-    <label for="dialog-name">Here is some content</label>
+  <div class="dialog-body">
+    <label>{{message}}</label>
   </div>
 </div>

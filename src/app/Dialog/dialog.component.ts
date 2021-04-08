@@ -1,10 +1,23 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 
+export interface DialogData {
+  title: string;
+  message: string;
+}
 @Component({
   selector: "dialog-component",
   templateUrl: "./dialog.component.html",
-  styles: ["./dialog.component.css"]
+  styleUrls: ["./dialog.component.css"]
 })
-export class DialogComponent {
-  @Input() name: string;
+export class DialogComponent implements OnInit {
+  dialogData: DialogData;
+  title: string;
+  message: string;
+  constructor() {}
+  ngOnInit() {
+    console.log(this.title);
+  }
+  public closeDialog() {
+    console.log("close clicked");
+  }
 }
