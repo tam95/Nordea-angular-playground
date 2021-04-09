@@ -3,6 +3,7 @@ import { EventEmitterService } from "../service/event-emitter.service";
 export interface IDialogData {
   title: string;
   message: string;
+  type: string;
 }
 @Component({
   selector: "dialog-component",
@@ -11,8 +12,7 @@ export interface IDialogData {
 })
 export class DialogComponent implements OnInit {
   @Input() dialogData: IDialogData;
-  title: string;
-  message: string;
+  hidden: boolean = false;
   constructor(private eventEmitterService: EventEmitterService) {}
   ngOnInit() {
     if (this.eventEmitterService.subsVar == undefined) {
@@ -24,6 +24,7 @@ export class DialogComponent implements OnInit {
     }
   }
   public toggleDialogButton() {
-    console.log("dialogData", this.dialogData);
+    if(this.hidden) this.hidden = false;
+    else this.hidden = true
   }
 }

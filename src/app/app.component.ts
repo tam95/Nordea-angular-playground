@@ -1,4 +1,4 @@
-import { Component, NgModule, VERSION } from "@angular/core";
+import { Component, NgModule, OnInit, VERSION } from "@angular/core";
 import { NgModel } from "@angular/forms";
 import { EventEmitterService } from "./service/event-emitter.service";
 import { IDialogData } from "./Dialog/dialog.component";
@@ -10,7 +10,8 @@ import { IDialogData } from "./Dialog/dialog.component";
 export class AppComponent implements OnInit {
   dialogData: IDialogData = {
     title: "title",
-    messge: "message"
+    message: "message",
+    type: "normal"
   };
   constructor(private eventEmitterService: EventEmitterService) {}
   ngOnInit() {}

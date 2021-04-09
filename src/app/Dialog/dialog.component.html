@@ -1,9 +1,11 @@
-<div class="dialog-container">
+<div class="dialog-container" [ngClass]="hidden ? 'hidden' : '' ">
   <div class="dialog-header">
-    <div id="titleText">xxxxx</div>
+    <div id="titleText">{{dialogData.title}}</div>
     <div id="xButton" (click)="toggleDialogButton()">X</div>
   </div>
   <div class="dialog-body">
-    <label>xxxx</label>
+    <div *ngIf="dialogData.type == 'normal'">
+      <label>{{dialogData.message}}</label>
+    </div>
   </div>
 </div>
