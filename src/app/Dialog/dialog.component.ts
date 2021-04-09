@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 
-export interface DialogData {
+export interface IDialogData {
   title: string;
   message: string;
 }
@@ -10,14 +10,12 @@ export interface DialogData {
   styleUrls: ["./dialog.component.css"]
 })
 export class DialogComponent implements OnInit {
-  dialogData: DialogData;
+  dialogData: IDialogData;
   title: string;
   message: string;
   constructor() {}
-  ngOnInit() {
-    console.log(this.title);
-  }
+  ngOnInit() {}
   public toggleDialogButton() {
-    console.log("close clicked");
+    console.log("cacac");
   }
 }

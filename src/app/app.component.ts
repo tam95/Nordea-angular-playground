@@ -6,10 +6,6 @@ import { NgModel } from "@angular/forms";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  constructor(private eventEmitterService: EventEmitterService) {}
   name = "Angular " + VERSION.major;
   title = "title";
-  toggleDialogButton() {
-    this.eventEmitterService.onToggleDialogButton();
-  }
 }
