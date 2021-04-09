@@ -17,13 +17,14 @@ export class DialogComponent implements OnInit {
   ngOnInit() {
     if (this.eventEmitterService.subsVar == undefined) {
       this.eventEmitterService.subsVar = this.eventEmitterService.invokeToggleDialog.subscribe(
-        () => {
-          this.toggleDialogButton();
+        (dialogData: IDialogData) => {
+          this.toggleDialogButton(dialogData);
         }
       );
     }
   }
-  public toggleDialogButton() {
+  public toggleDialogButton(dialogData) {
+    if(dialogData) this.dialogData = dialogData;
     if(this.hidden) this.hidden = false;
     else this.hidden = true
   }

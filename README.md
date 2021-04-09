@@ -1,3 +1,5 @@
-# angular-ivy-zvkwzj
+### npm install
 
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/angular-ivy-zvkwzj)
+### npm install -g @angular/cli (in case dont have angular cli)
+
+### ng serve

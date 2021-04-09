@@ -7,5 +7,10 @@
     <div *ngIf="dialogData.type == 'normal'">
       <label>{{dialogData.message}}</label>
     </div>
+    <div *ngIf="dialogData.type == 'confirm'">
+      <label>{{dialogData.message}}</label>
+      <br>
+      <button (click)="toggleDialogButton()">Confirm</button>
+    </div>
   </div>
 </div>

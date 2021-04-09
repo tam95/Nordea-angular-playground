@@ -13,9 +13,17 @@ export class AppComponent implements OnInit {
     message: "message",
     type: "normal"
   };
+  dialogData2: IDialogData = {
+    title: "title 2",
+    message: "message 2",
+    type: "confirm"
+  };
   constructor(private eventEmitterService: EventEmitterService) {}
   ngOnInit() {}
-  dialogClick() {
-    this.eventEmitterService.onToggleDialog();
+  dialogClick(dialogData) {
+    this.eventEmitterService.onToggleDialog(dialogData);
+  };
+  dialogConfirmClick() {
+
   }
 }

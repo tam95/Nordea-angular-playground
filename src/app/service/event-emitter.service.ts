@@ -1,5 +1,6 @@
 import { Injectable, EventEmitter } from "@angular/core";
 import { Subscription } from "rxjs/internal/Subscription";
+import { IDialogData } from "../Dialog/dialog.component";
 
 @Injectable({
   providedIn: "root"
@@ -10,7 +11,7 @@ export class EventEmitterService {
 
   constructor() {}
 
-  onToggleDialog() {
-    this.invokeToggleDialog.emit();
+  onToggleDialog(dialogData: IDialogData) {
+    this.invokeToggleDialog.emit(dialogData);
   }
 }

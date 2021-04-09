@@ -1,2 +1,3 @@
 <dialog-component [dialogData]='dialogData'></dialog-component>
-<button (click)='dialogClick()'>Button here</button>
+<button (click)='dialogClick(dialogData)'>Button normal dialog</button>
+<button (click)='dialogClick(dialogData2)'>Button confirm dialog</button>
