@@ -1,7 +1,7 @@
 <div class="dialog-container" [ngClass]="hidden ? 'hidden' : '' ">
   <div class="dialog-header">
     <div id="titleText">{{dialogData.title}}</div>
-    <div id="xButton" (click)="toggleDialogButton()">X</div>
+    <div id="xButton" (click)="closeDialog()">X</div>
   </div>
   <div class="dialog-body">
     <div *ngIf="dialogData.type == 'normal'">
@@ -10,7 +10,7 @@
     <div *ngIf="dialogData.type == 'confirm'">
       <label>{{dialogData.message}}</label>
       <br>
-      <button (click)="toggleDialogButton()">Confirm</button>
+      <button (click)="closeDialog()">Confirm</button>
     </div>
   </div>
 </div>

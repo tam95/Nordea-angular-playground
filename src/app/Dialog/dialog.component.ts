@@ -12,7 +12,7 @@ export interface IDialogData {
 })
 export class DialogComponent implements OnInit {
   @Input() dialogData: IDialogData;
-  hidden: boolean = false;
+  hidden: boolean = true;
   constructor(private eventEmitterService: EventEmitterService) {}
   ngOnInit() {
     if (this.eventEmitterService.subsVar == undefined) {
@@ -25,7 +25,9 @@ export class DialogComponent implements OnInit {
   }
   public toggleDialogButton(dialogData) {
     if(dialogData) this.dialogData = dialogData;
-    if(this.hidden) this.hidden = false;
-    else this.hidden = true
+    this.hidden = false;
+  }
+  public closeDialog(){
+    this.hidden = true;
   }
 }
