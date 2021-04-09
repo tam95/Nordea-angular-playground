@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-
+import { EventEmitterService } from "../service/event-emitter.service";
 export interface IDialogData {
   title: string;
   message: string;
@@ -10,12 +10,20 @@ export interface IDialogData {
   styleUrls: ["./dialog.component.css"]
 })
 export class DialogComponent implements OnInit {
-  dialogData: IDialogData;
+  @Input() dialogData: IDialogData;
   title: string;
   message: string;
-  constructor() {}
-  ngOnInit() {}
+  constructor(private eventEmitterService: EventEmitterService) {}
+  ngOnInit() {
+    if (this.eventEmitterService.subsVar == undefined) {
+      this.eventEmitterService.subsVar = this.eventEmitterService.invokeToggleDialog.subscribe(
+        () => {
+          this.toggleDialogButton();
+        }
+      );
+    }
+  }
   public toggleDialogButton() {
-    console.log("cacac");
+    console.log("dialogData", this.dialogData);
   }
 }
