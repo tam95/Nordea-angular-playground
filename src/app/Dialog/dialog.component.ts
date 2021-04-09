@@ -17,7 +17,7 @@ export class DialogComponent implements OnInit {
   ngOnInit() {
     console.log(this.title);
   }
-  public closeDialog() {
+  public toggleDialogButton() {
     console.log("close clicked");
   }
 }
